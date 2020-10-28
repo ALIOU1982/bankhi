@@ -17,8 +17,7 @@ public class BankhiApplication implements CommandLineRunner{
 		SpringApplication.run(BankhiApplication.class, args);
 	}
 	
-	public void run(String... args) throws Exception{
-		
+	public void run(String... args) throws Exception{		
 		typeImmoRepository.save(new TypeImmo());
 	}
 
