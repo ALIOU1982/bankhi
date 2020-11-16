@@ -18,7 +18,10 @@ public class BankhiApplication implements CommandLineRunner{
 	}
 	
 	public void run(String... args) throws Exception{		
-		typeImmoRepository.save(new TypeImmo());
-	}
+		TypeImmo ty = new TypeImmo();		
+		ty.setNomType("Maison");
+		ty.setDescription("Maison Desc 1");
+		typeImmoRepository.save(ty);
+	}        
 
 }

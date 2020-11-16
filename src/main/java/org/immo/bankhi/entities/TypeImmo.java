@@ -15,7 +15,9 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
 @SuppressWarnings("serial")
 @Entity
@@ -24,6 +26,7 @@ import lombok.ToString;
 @AllArgsConstructor 
 @ToString
 @Table(name="Type_Immo")
+@Accessors(chain=true)
 public class TypeImmo implements Serializable {
 	
 	@Id
@@ -32,9 +35,11 @@ public class TypeImmo implements Serializable {
 	private Long id;
 	
 	@SuppressWarnings("unused")
+	@Setter
 	private String nomType;
 	
 	@SuppressWarnings("unused")
+	@Setter
 	private String description;
 	
 	@OneToOne(cascade = CascadeType.ALL ) 
