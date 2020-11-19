@@ -12,6 +12,7 @@
 	<artifactId>bankhi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bankhi</name>
+	
 	<description>Gestion immobilière par Spring Boot</description>
 
 	<properties>
@@ -71,8 +72,23 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+                    <execution>
+                        <id>deploy-node-modules-artifact</id>
+                        <phase>deploy</phase>
+                    </execution>
+                </executions>
 			</plugin>
 		</plugins>
 	</build>
+	
+	
+	<distributionManagement>
+    	<repository>
+      		<id>bankhi_repo</id>
+      		<name>Depot d'entreprise</name>
+      		<url>github.com/ALIOU1982/repositoryMaven.git</url>
+    	</repository>
+  	</distributionManagement>
 
 </project>

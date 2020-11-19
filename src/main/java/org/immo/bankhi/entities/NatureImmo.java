@@ -13,9 +13,7 @@ import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 @SuppressWarnings("serial")
@@ -23,8 +21,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor 
 @Data
-@Setter
-@Getter
 @ToString
 @Table(name="Nature_Immo")
 public class NatureImmo implements Serializable{
@@ -33,10 +29,8 @@ public class NatureImmo implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@SuppressWarnings("unused")
 	private String nomNature;
 	
-	@SuppressWarnings("unused")
 	private String description;
 	
 	@OneToOne(cascade = CascadeType.ALL ) 

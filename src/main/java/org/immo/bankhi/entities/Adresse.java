@@ -29,16 +29,11 @@ public class Adresse implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@SuppressWarnings("unused")
 	private String nomVille;
 	
-	@SuppressWarnings("unused")
 	private String quartier;
 	
-	@SuppressWarnings("unused")
 	private String telephone;
-	
-	@SuppressWarnings("unused")
 	private String email;
 	
 	@OneToOne(cascade = CascadeType.ALL ) 

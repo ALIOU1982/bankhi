@@ -15,7 +15,6 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
@@ -34,12 +33,8 @@ public class TypeImmo implements Serializable {
 	@Column(name="ID_TYPE_IMMO")
 	private Long id;
 	
-	@SuppressWarnings("unused")
-	@Setter
 	private String nomType;
 	
-	@SuppressWarnings("unused")
-	@Setter
 	private String description;
 	
 	@OneToOne(cascade = CascadeType.ALL ) 
