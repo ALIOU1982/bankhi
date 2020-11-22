@@ -64,7 +64,7 @@ public class BankhiApplication implements CommandLineRunner{
 		lieuImmoRepository.save(l1);
 		lieuImmoRepository.save(l2);
 		
-		Immobilisation i1 = new Immobilisation(null, "Maison Soussou", "Fini", l1, n1, ty, null);
+		Immobilisation i1 = new Immobilisation(null, "Maison Soussou", "Fini", l2, n1, ty, null);
 		Immobilisation i2 = new Immobilisation(null, "Maison Peul", "Non Fini ", l1, n2, ti, null);
 		List<Immobilisation> lI1 = new ArrayList<>();
 		lI1.add(i1);
