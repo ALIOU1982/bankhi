@@ -1,14 +1,14 @@
 package org.immo.bankhi.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -29,16 +29,12 @@ public class LieuImmo implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@SuppressWarnings("unused")
 	private String description;	
 
-    @OneToOne 
-    @JoinColumn( name="idAdresse", nullable=false )
-	private Adresse adresseImmo;
-    
-    @OneToOne(cascade = CascadeType.ALL ) 
-	@JoinColumn( name="idImmobilisation" )
-	private Immobilisation immoblisation;
+	private String nomVille;
 	
-
+	private String quartier;
+    
+    @OneToMany(targetEntity=Immobilisation.class, mappedBy="lieuImmo")
+	private List<Immobilisation> immos =  new ArrayList<Immobilisation>();
 }

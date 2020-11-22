@@ -84,11 +84,16 @@
 	
 	
 	<distributionManagement>
+  		<snapshotRepository>
+    		<id>gitlab-maven</id>
+    		<url>https://github.com/ALIOU1982/repositoryMaven</url>
+ 		 </snapshotRepository>
+  		<!--  
     	<repository>
       		<id>bankhi_repo</id>
       		<name>Depot d'entreprise</name>
       		<url>github.com/ALIOU1982/repositoryMaven.git</url>
-    	</repository>
+    	</repository> -->
   	</distributionManagement>
 
 </project>

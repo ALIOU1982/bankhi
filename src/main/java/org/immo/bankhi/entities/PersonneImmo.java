@@ -8,8 +8,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.springframework.lang.NonNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,19 +33,21 @@ public class PersonneImmo implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@SuppressWarnings("unused")
+	@NonNull
 	private String nomPers;
 	
-	@SuppressWarnings("unused")
 	private String prenomPers;
 	
-	@SuppressWarnings("unused")
-	private String telPers;
+	@NonNull
+	private String telephone;
+	
+	private String email;
 	
 	@OneToMany(targetEntity = Immobilisation.class, mappedBy = "personneImmo")
 	private List<Immobilisation> immos = new ArrayList<>();
 	
-	@OneToMany(targetEntity = Adresse.class, mappedBy = "personneImmo")
-	private List<Adresse> adressePers = new ArrayList<>();
+	@OneToOne
+	@JoinColumn(name="idTypeAdresse", nullable=true )
+	private Adresse adresse;
 
 }

@@ -8,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -28,26 +27,24 @@ public class Immobilisation implements Serializable{
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@SuppressWarnings("unused")
 	private String nomImmo;
 	
-	@SuppressWarnings("unused")
 	private String descriptionImmo;
 	
-	@OneToOne  
-	@JoinColumn( name="idLieuImmo", nullable=false )
+	@ManyToOne
+	@JoinColumn( name="idLieuImmo", nullable=true)
 	private LieuImmo lieuImmo;
-	
-	@OneToOne  
-	@JoinColumn( name="idNatureImmo", nullable=false )
+		 
+	@ManyToOne
+	@JoinColumn(name="idNatureImmo", nullable=false)
 	private NatureImmo natureImmo;
 	
-	@OneToOne  
-	@JoinColumn( name="idTypeImmo", nullable=false )
+	@ManyToOne
+	@JoinColumn(name="idTypeImmo", nullable=false)
 	private TypeImmo typeImmo;
 	
 	@ManyToOne
-	@JoinColumn(name="idPersonneImmo", nullable=false)
+	@JoinColumn(name="idPersonneImmo", nullable=true)
 	private PersonneImmo personneImmo;
 
 }
