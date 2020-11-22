@@ -47,8 +47,8 @@ public class BankhiApplication implements CommandLineRunner{
 	
 	public void run(String... args) throws Exception{		
 				
-		NatureImmo n1 = new NatureImmo(null, "Location ", "Appartement ", null);
-		NatureImmo n2 = new NatureImmo(null, "Location ", "Appartement ", null);
+		NatureImmo n1 = new NatureImmo(null, "Location", "Appartement", null);
+		NatureImmo n2 = new NatureImmo(null, "Vente", "Terrain", null);
 		natureImmoRepositoty.save(n1);
 		natureImmoRepositoty.save(n2);
 		
@@ -60,11 +60,11 @@ public class BankhiApplication implements CommandLineRunner{
 		typeImmoRepository.save(ti);
 		
 		LieuImmo l2 = new LieuImmo(null, "Loin de la nationale", "Coyah", "Kouria 2", null);
-		LieuImmo l1 = new LieuImmo(null, "Près de la nationale", "Coyah", "Kouria", null);
+		LieuImmo l1 = new LieuImmo(null, "Près de la nationale", "Coyah", "Kouria 1", null);
 		lieuImmoRepository.save(l1);
 		lieuImmoRepository.save(l2);
 		
-		Immobilisation i1 = new Immobilisation(null, "Maison Soussou", " Fini ", l1, n1, ty, null);
+		Immobilisation i1 = new Immobilisation(null, "Maison Soussou", "Fini", l1, n1, ty, null);
 		Immobilisation i2 = new Immobilisation(null, "Maison Peul", "Non Fini ", l1, n2, ti, null);
 		List<Immobilisation> lI1 = new ArrayList<>();
 		lI1.add(i1);
@@ -74,7 +74,7 @@ public class BankhiApplication implements CommandLineRunner{
 		immobilisationRepository.save(i2);
 		
 		PersonneImmo p1 = new PersonneImmo(null, "BARRY", "Thierno Aliou", "622624569", "thiernaliou@gmail.com", lI1,  null);
-		PersonneImmo p2 = new PersonneImmo(null, "BARRY", "Mamadou", "657624569", "thiernaliou@gmail.com", lI2,  null);
+		PersonneImmo p2 = new PersonneImmo(null, "BARRY", "Mamadou", "657624569", "barrythiernaliou@yahoo.fr", lI2,  null);
 		peronneImmoRepository.save(p1);
 		peronneImmoRepository.save(p2);
 		
@@ -93,7 +93,7 @@ public class BankhiApplication implements CommandLineRunner{
 		lieuImmoRepository.save(l1);
 		lieuImmoRepository.save(l2);
 		
-		Adresse a1 = new Adresse(null, "Coyah","Sanoyah", p1);
+		Adresse a1 = new Adresse(null, "Coyah","Gomboyah", p1);
 		Adresse a2 = new Adresse(null, "Coyah","Sanoyah", p2);
 		adresseRepository.save(a1);
 		adresseRepository.save(a2);		
