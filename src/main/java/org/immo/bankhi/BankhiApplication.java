@@ -107,5 +107,4 @@ public class BankhiApplication implements CommandLineRunner{
 		ty.setImmobilisations(listI2);	
 		
 	}        
-
 }
