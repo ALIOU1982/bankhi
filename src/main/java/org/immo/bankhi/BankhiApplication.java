@@ -55,7 +55,7 @@ public class BankhiApplication implements CommandLineRunner{
 		TypeImmo ty = new TypeImmo();		
 		ty.setNomType("Maison");
 		ty.setDescription("Maison Desc 1");
-		TypeImmo ti = new TypeImmo(null, "Maison2", "Maison Desc 2", null);
+		TypeImmo ti = new TypeImmo(null, "Maison 2", "Maison Desc 2", null);
 		typeImmoRepository.save(ty);
 		typeImmoRepository.save(ti);
 		
