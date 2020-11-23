@@ -7,7 +7,7 @@ import org.immo.bankhi.DAO.AdresseRepository;
 import org.immo.bankhi.DAO.ImmobilisationRepository;
 import org.immo.bankhi.DAO.LieuImmoRepository;
 import org.immo.bankhi.DAO.NatureImmoRepositoty;
-import org.immo.bankhi.DAO.PeronneImmoRepository;
+import org.immo.bankhi.DAO.PersonneImmoRepository;
 import org.immo.bankhi.DAO.TypeImmoRepository;
 import org.immo.bankhi.entities.Adresse;
 import org.immo.bankhi.entities.Immobilisation;
@@ -39,7 +39,7 @@ public class BankhiApplication implements CommandLineRunner{
 	ImmobilisationRepository immobilisationRepository;
 	
 	@Autowired 
-	PeronneImmoRepository peronneImmoRepository;
+	PersonneImmoRepository personneImmoRepository;
 
 	public static void main(String[] args)  {
 		SpringApplication.run(BankhiApplication.class, args);
@@ -75,8 +75,8 @@ public class BankhiApplication implements CommandLineRunner{
 		
 		PersonneImmo p1 = new PersonneImmo(null, "BARRY", "Thierno Aliou", "622624569", "thiernaliou@gmail.com", lI1,  null);
 		PersonneImmo p2 = new PersonneImmo(null, "BARRY", "Mamadou", "657624569", "barrythiernaliou@yahoo.fr", lI2,  null);
-		peronneImmoRepository.save(p1);
-		peronneImmoRepository.save(p2);
+		personneImmoRepository.save(p1);
+		personneImmoRepository.save(p2);
 		
 		//Mise à jour de certains champs des tables
 		i1.setPersonneImmo(p1);
@@ -100,8 +100,8 @@ public class BankhiApplication implements CommandLineRunner{
 		
 		p1.setAdresse(a1);
 		p2.setAdresse(a2);
-		peronneImmoRepository.save(p1);
-		peronneImmoRepository.save(p2);
+		personneImmoRepository.save(p1);
+		personneImmoRepository.save(p2);
 		
 		ti.setImmobilisations(listI1);
 		ty.setImmobilisations(listI2);	
