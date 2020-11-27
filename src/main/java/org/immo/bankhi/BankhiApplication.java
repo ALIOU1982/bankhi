@@ -64,8 +64,8 @@ public class BankhiApplication implements CommandLineRunner{
 		lieuImmoRepository.save(l1);
 		lieuImmoRepository.save(l2);
 		
-		Immobilisation i1 = new Immobilisation(null, "Maison Soussou", "Fini", l2, n1, ty, null);
-		Immobilisation i2 = new Immobilisation(null, "Maison Peul", "Non Fini ", l1, n2, ti, null);
+		Immobilisation i1 = new Immobilisation(null, "Maison Soussou", "Fini", l2, n1, ty, null, null);
+		Immobilisation i2 = new Immobilisation(null, "Maison Peul", "Non Fini ", l1, n2, ti, null, null);
 		List<Immobilisation> lI1 = new ArrayList<>();
 		lI1.add(i1);
 		List<Immobilisation> lI2 = new ArrayList<>();
@@ -93,8 +93,8 @@ public class BankhiApplication implements CommandLineRunner{
 		lieuImmoRepository.save(l1);
 		lieuImmoRepository.save(l2);
 		
-		Adresse a1 = new Adresse(null, "Coyah","Gomboyah", p1);
-		Adresse a2 = new Adresse(null, "Coyah","Sanoyah", p2);
+		Adresse a1 = new Adresse(null, "Coyah","Gomboyah", 0, new String(), new String(), p1);
+		Adresse a2 = new Adresse(null, "Coyah","Sanoyah",  0, new String(), new String(), p2);
 		adresseRepository.save(a1);
 		adresseRepository.save(a2);		
 		
