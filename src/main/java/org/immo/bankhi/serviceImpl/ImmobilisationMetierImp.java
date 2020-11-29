@@ -80,20 +80,18 @@ public class  ImmobilisationMetierImp implements IImmobilisationMetier{
 
 	@Override
 	public Immobilisation immobilsationParId(Long idImmo) {
-		// TODO Auto-generated method stub
-		return null;
+		return immobilisationRepository.getOne(idImmo);
 	}
 
 	@Override
 	public List<NatureImmo> natureImmoParProprio(Long idPers) {
-		// TODO Auto-generated method stub
-		return null;
+		PersonneImmo persIm = personneImmoRepository.getOne(idPers);
+		return natureImmoRepositoty.natureImmoParProprio(persIm);
 	}
 
 	@Override
 	public List<NatureImmo> natureImmoParType(Long idType) {
-		// TODO Auto-generated method stub
-		return null;
+		TypeImmo tyImmo = typeImmoRepository.getOne(idType);
+		return natureImmoRepositoty.natureImmoParType(tyImmo);
 	}
-
 }
