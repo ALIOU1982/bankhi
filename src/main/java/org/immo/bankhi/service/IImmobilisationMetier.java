@@ -6,7 +6,7 @@ import org.immo.bankhi.entities.*;
 
 public interface IImmobilisationMetier {
 	
-	public List<Immobilisation> immoParProprio(PersonneImmo pers);
+	public List<Immobilisation> immoParProprio(Long idPers);
 	
 	public List<Immobilisation> immoParNature(Long idNature);
 	

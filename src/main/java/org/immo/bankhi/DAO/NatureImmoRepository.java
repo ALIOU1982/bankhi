@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
-public interface NatureImmoRepositoty extends JpaRepository<NatureImmo, Long>{
+public interface NatureImmoRepository extends JpaRepository<NatureImmo, Long>{	
 
 }

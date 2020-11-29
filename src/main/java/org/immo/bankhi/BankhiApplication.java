@@ -6,7 +6,7 @@ import java.util.List;
 import org.immo.bankhi.DAO.AdresseRepository;
 import org.immo.bankhi.DAO.ImmobilisationRepository;
 import org.immo.bankhi.DAO.LieuImmoRepository;
-import org.immo.bankhi.DAO.NatureImmoRepositoty;
+import org.immo.bankhi.DAO.NatureImmoRepository;
 import org.immo.bankhi.DAO.PersonneImmoRepository;
 import org.immo.bankhi.DAO.TypeImmoRepository;
 import org.immo.bankhi.entities.Adresse;
@@ -15,6 +15,7 @@ import org.immo.bankhi.entities.LieuImmo;
 import org.immo.bankhi.entities.NatureImmo;
 import org.immo.bankhi.entities.PersonneImmo;
 import org.immo.bankhi.entities.TypeImmo;
+import org.immo.bankhi.service.IImmobilisationMetier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -33,13 +34,16 @@ public class BankhiApplication implements CommandLineRunner{
 	LieuImmoRepository lieuImmoRepository;
 	
 	@Autowired
-	NatureImmoRepositoty natureImmoRepositoty;
+	NatureImmoRepository natureImmoRepositoty;
 	
 	@Autowired
 	ImmobilisationRepository immobilisationRepository;
 	
 	@Autowired 
 	PersonneImmoRepository personneImmoRepository;
+	
+	@Autowired
+	private IImmobilisationMetier iImmobilisationMetier;
 
 	public static void main(String[] args)  {
 		SpringApplication.run(BankhiApplication.class, args);
@@ -105,6 +109,8 @@ public class BankhiApplication implements CommandLineRunner{
 		
 		ti.setImmobilisations(listI1);
 		ty.setImmobilisations(listI2);	
+		
+		System.out.println("Test d'effectivité "+iImmobilisationMetier.immoParProprio(p2.getId()).get(0).getNomImmo());
 		
 	}        
 }
