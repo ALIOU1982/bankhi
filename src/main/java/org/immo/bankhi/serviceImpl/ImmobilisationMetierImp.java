@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class ImmobilisationMetierImpl implements IImmobilisationMetier{
+public class  ImmobilisationMetierImp implements IImmobilisationMetier{
 
 	@Autowired
 	private ImmobilisationRepository immobilisationRepository;
