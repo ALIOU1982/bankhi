@@ -77,8 +77,8 @@ public class BankhiApplication implements CommandLineRunner{
 		immobilisationRepository.save(i1);
 		immobilisationRepository.save(i2);
 		
-		PersonneImmo p1 = new PersonneImmo(null, "BARRY", "Thierno Aliou", "622624569", "thiernaliou@gmail.com", lI1,  null);
-		PersonneImmo p2 = new PersonneImmo(null, "BARRY", "Mamadou", "657624569", "barrythiernaliou@yahoo.fr", lI2,  null);
+		PersonneImmo p1 = new PersonneImmo(null, "BARRY", "Thierno Aliou", "622624569", "thiernaliou@gmail.com", "Badara82?", lI1,  null);
+		PersonneImmo p2 = new PersonneImmo(null, "BARRY", "Mamadou", "657624569", "barrythiernaliou@yahoo.fr", "Badara82!", lI2,  null);
 		personneImmoRepository.save(p1);
 		personneImmoRepository.save(p2);
 		

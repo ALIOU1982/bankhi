@@ -43,6 +43,9 @@ public class PersonneImmo implements Serializable {
 	
 	private String email;
 	
+	@NonNull
+	private String motDePasse;
+	
 	@OneToMany(targetEntity = Immobilisation.class, mappedBy = "personneImmo")
 	private List<Immobilisation> immos = new ArrayList<>();
 	
